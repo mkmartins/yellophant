@@ -1,27 +1,31 @@
-<h1>Listing messages</h1>
+<div class="info">
+  Female, 29
+</div>
+<div class="description">
+  Mother of a child with Autism - Thinks she's a bad mom because she lacks patience at times - 
+  Sometimes feels like leaving everything behind - Dreams of one day owning her own food truck
+</div>
 
-<table>
-  <tr>
-    <th>Body</th>
-    <th>Email</th>
-    <th>Share</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="message">
+  <%= render 'form' %>
+</div>
 
-<% @messages.each do |message| %>
-  <tr>
-    <td><%= message.body %></td>
-    <td><%= message.email %></td>
-    <td><%= message.share %></td>
-    <td><%= link_to 'Show', message %></td>
-    <td><%= link_to 'Edit', edit_message_path(message) %></td>
-    <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+<div class="positive-messages">
+  <h3>Messages from other awesome people like you:</h3>
 
-<%= link_to 'New Message', new_message_path %>
+  <% @messages.each do |message| %>
+    <tr>
+      <td><%= message.body %></td>
+
+      <td><%#= link_to 'Show', message %></td>
+      <td><%= link_to 'Edit', edit_message_path(message) %></td>
+      <td><%#= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+  <%#= link_to 'New Message', new_message_path %>
+</div>

@@ -1,5 +1,9 @@
 Yellowphant::Application.routes.draw do
-  root :to => "main#index"
+  devise_for :users
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  root :to => "messages#index"
 
   resources :messages
 

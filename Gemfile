@@ -11,6 +11,8 @@ gem 'sqlite3', group: :development
 
 gem 'rails_12factor', group: :production
 
+gem 'rails_admin'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -39,3 +41,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+
+gem "devise"
